@@ -1,4 +1,4 @@
-path: /Users/raphaelquivel/Downloads/droneImages/dataset
+path: /private/var/www/detectfpvdrones/dataset
 train: images/train
 val: images/val
 

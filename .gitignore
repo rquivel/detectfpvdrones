@@ -1,5 +1,5 @@
 venv/
-*.pt
-runs/
+# *.pt
+# runs/
 __pycache__/
 .DS_Store

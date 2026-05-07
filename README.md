@@ -4,7 +4,7 @@ A custom-trained YOLOv8 model for detecting FPV (First Person View) drones in im
 
 ## Project Overview
 
-- **Architecture:** YOLOv8 Nano (`yolov8n.pt`)
+- **Architecture:** YOLOv8 Small (`yolov8s.pt`) — upgraded from Nano after the v1 run undertrained the classification head
 - **Hardware:** MacBook Pro M3 Pro (MPS GPU acceleration)
 - **Classes:** 1 (`drone`)
 - **Image size:** 640 × 640
@@ -71,12 +71,14 @@ cd ../../../
 ### 4. `data.yaml`
 
 ```yaml
-path: /Users/raphaelquivel/Downloads/droneImages/dataset
+path: /private/var/www/detectfpvdrones/dataset
 train: images/train
 val: images/val
 nc: 1
 names: ["drone"]
 ```
+
+If you clone this repo to a different location, update `path` to point at the project's `dataset/` directory.
 
 ## Setup
 
@@ -106,41 +108,104 @@ brew install python ffmpeg
 
 ## Training
 
-Train with MPS acceleration on Apple Silicon:
+Use the included `train.sh` (activates the venv, runs `yolo` with the tuned hyperparameters):
+
+```bash
+./train.sh                # writes to runs/detect/train_v2
+./train.sh my_run_name    # writes to runs/detect/my_run_name
+```
+
+Equivalent direct command:
 
 ```bash
 yolo task=detect mode=train \
-  model=yolov8n.pt \
+  model=yolov8s.pt \
   data=data.yaml \
-  epochs=50 \
-  imgsz=640 \
-  device=mps
+  epochs=200 patience=30 \
+  imgsz=640 device=mps \
+  cos_lr=True lr0=0.005 \
+  name=train_v2
 ```
 
-Results, plots, and weights are written to `runs/detect/train/`. The best checkpoint is saved at `runs/detect/train/weights/best.pt`.
+Results, plots, and weights are written to `runs/detect/<name>/`. The best checkpoint is saved at `runs/detect/<name>/weights/best.pt`.
 
-## Results
+### Why these settings
 
-Training reached strong accuracy quickly on this small dataset:
+The first run (`runs/detect/train/`, yolov8n, 50 epochs, default LR) hit a high mAP50 around epoch 35 but the classification head never produced confident predictions — top confidence on the validation set was ~0.025, so `predict(conf=0.25)` returned nothing. The retrain config addresses that:
 
-| Epoch | mAP50 |
-| ----- | ----- |
-| 1     | 0.33  |
-| 5     | 0.78  |
-| 10    | 0.83  |
-| 35    | 0.97  |
+- **`yolov8s.pt`** — more capacity than nano; helps the cls head separate drone from background on a small dataset.
+- **`epochs=200 patience=30`** — long enough to converge, with early stopping so we keep the best checkpoint instead of overfitting.
+- **`cos_lr=True lr0=0.005`** — gentler, decaying schedule so the cls head stabilizes near the end of training.
 
-GPU memory use stayed around 4.3 GB on the M3 Pro.
+## Results (v1, `runs/detect/train/`)
 
-## Inference
+Honest numbers from `results.csv`:
 
-Run detection on an image or video:
+| Epoch | Precision | Recall | mAP50 | mAP50-95 |
+| ----- | --------- | ------ | ----- | -------- |
+| 1     | 0.003     | 1.000  | 0.330 | 0.141    |
+| 5     | 0.003     | 0.875  | 0.775 | 0.482    |
+| 10    | 0.003     | 1.000  | 0.828 | 0.436    |
+| 35    | 0.860     | 0.875  | 0.971 | 0.317    |
+| 50    | 0.976     | 0.625  | 0.773 | 0.368    |
+
+GPU memory use stayed around 4.3 GB on the M3 Pro. Note the mAP50 *dropped* from 0.97 at epoch 35 to 0.77 at epoch 50 — early stopping in v2 prevents that regression.
+
+## Results (v2, `runs/detect/train_v2/`)
+
+Validation metrics on `best.pt`:
+
+| Precision | Recall | mAP50 | mAP50-95 |
+| --------- | ------ | ----- | -------- |
+| 0.85      | 0.875  | 0.812 | 0.493    |
+
+Training stopped early at epoch 32 (best epoch 2 — partly an artifact of the 9-image val set). The key win over v1 isn't the headline metric, it's the **classification confidence**: top val confidences are now in the 0.5–0.84 range vs. 0.025 in v1, so `predict(conf=0.25)` actually returns boxes.
+
+## Image inference
+
+Quick Python check (see [`test.py`](test.py)):
+
+```python
+from ultralytics import YOLO
+model = YOLO('./runs/detect/train_v2/weights/best.pt')
+results = model.predict(source='./dataset/images/train/image2.png', conf=0.25)
+results[0].show()
+```
+
+CLI equivalent:
 
 ```bash
 yolo task=detect mode=predict \
-  model=runs/detect/train/weights/best.pt \
-  source='path/to/fpv_footage.mp4' \
+  model=runs/detect/train_v2/weights/best.pt \
+  source='path/to/image_or_video' \
   show=True
+```
+
+## Real-time video inference
+
+Use [`video.py`](video.py) for live detection on a webcam, video file, or RTSP/HTTP stream. It opens an OpenCV window with annotated frames, an FPS counter, and a per-frame detection count. Press **q** to quit.
+
+```bash
+python3 video.py                                # webcam (source 0)
+python3 video.py path/to/fpv_footage.mp4        # local video file
+python3 video.py rtsp://192.168.1.10:554/stream # network stream
+```
+
+Useful flags:
+
+| Flag | Default | What it does |
+| ---- | ------- | ------------ |
+| `--weights PATH` | `runs/detect/train_v2/weights/best.pt` | Use a different checkpoint. |
+| `--conf FLOAT` | `0.25` | Confidence threshold. Try `0.10`–`0.15` on unfamiliar footage. |
+| `--imgsz INT` | `640` | Inference resolution. Bump to `1280` for small/distant drones. |
+| `--device` | `mps` | `mps`, `cpu`, or a CUDA index. |
+| `--track` | off | Switch from `predict` to `track` so each drone gets a persistent ID across frames. |
+| `--save PATH` | off | Also write the annotated video to disk (e.g. `--save annotated.mp4`). |
+
+Example: persistent IDs at a relaxed threshold, saving the result:
+
+```bash
+python3 video.py clip.mp4 --conf 0.15 --track --save annotated.mp4
 ```
 
 ## Project Structure
@@ -148,13 +213,16 @@ yolo task=detect mode=predict \
 ```
 detectfpvdrones/
 ├── data.yaml              # dataset config
+├── train.sh               # retrain entry point
+├── test.py                # quick image-inference example
+├── video.py               # real-time webcam / video / stream inference
 ├── requirements.txt       # python dependencies
 ├── README.md
 ├── dataset/               # images + labels (gitignored)
 │   ├── images/{train,val}
 │   └── labels/{train,val}
 └── runs/                  # training output (gitignored)
-    └── detect/train/weights/best.pt
+    └── detect/<name>/weights/best.pt
 ```
 
 ## .gitignore
