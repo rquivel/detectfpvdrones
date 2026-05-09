@@ -2,5 +2,5 @@ path: /private/var/www/detectfpvdrones/dataset
 train: images/train
 val: images/val
 
-nc: 1
-names: ['drone']
+nc: 3
+names: ['drone', 'bird', 'person']

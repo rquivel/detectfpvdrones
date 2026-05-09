@@ -6,9 +6,9 @@ A custom-trained YOLOv8 model for detecting FPV (First Person View) drones in im
 
 - **Architecture:** YOLOv8 Small (`yolov8s.pt`) — upgraded from Nano after the v1 run undertrained the classification head
 - **Hardware:** MacBook Pro M3 Pro (MPS GPU acceleration)
-- **Classes:** 1 (`drone`)
+- **Classes:** 3 — `drone`, `bird`, `person`. Bird and person are negative-context classes that help the model stop calling everything that flies a drone (off-the-shelf yolov8s classifies FPV drones as `airplane`).
 - **Image size:** 640 × 640
-- **Dataset split:** 36 training images / 9 validation images
+- **Dataset split:** 144 training images / 38 validation images
 
 ## Repository
 
@@ -20,53 +20,77 @@ git@github.com:rquivel/detectfpvdrones.git
 
 The dataset was assembled and labeled locally on macOS.
 
+New candidate images live in `source/` (a staging area, not the training set). The pipeline is:
+
+1. drop new images into `source/`
+2. normalize their formats with `convert.sh`
+3. label them with YoloLabel
+4. run `triage.py` to compare against the latest trained model and split each image into train, val, or skip
+
 ### 1. Normalize image formats
 
-YOLO labeling tools work best with `.png` and `.jpg`. Any `.webp` or `.jpeg` images were converted using macOS's built-in `sips`:
+YOLO labeling tools work best with `.png` and `.jpg`. [`convert.sh`](convert.sh) batch-converts any `.webp`, `.jpeg`, or `.avif` files in the current directory to PNG using macOS's built-in `sips`:
 
 ```bash
-cd ~/Downloads/droneImages
-for i in *.webp; do sips -s format png "$i" --out "${i%.webp}.png"; done
-for i in *.jpeg *.jpg; do sips -s format png "$i" --out "${i%.*}.png"; done
-rm *.webp *.jpeg
+cd source
+../convert.sh
 ```
+
+The script removes the originals after a successful conversion.
 
 ### 2. Annotate with YoloLabel
 
-A `classes.txt` file containing a single line `drone` was placed in the image directory, then bounding boxes were drawn in [YoloLabel](https://github.com/developer0hye/Yolo_Label). Each image gets a matching `.txt` file in YOLO format:
+A [`classes.txt`](classes.txt) file with three lines (in this order) lives in the project root:
+
+```
+drone
+bird
+person
+```
+
+Drop a copy alongside the images you're labeling, then draw bounding boxes in [YoloLabel](https://github.com/developer0hye/Yolo_Label). Each image gets a matching `.txt` file in YOLO format:
 
 ```
 <class_id> <x_center> <y_center> <width> <height>
 ```
 
-(All values normalized 0–1 relative to image size.)
+(All values normalized 0–1 relative to image size.) `class_id` is `0` for drone, `1` for bird, `2` for person — the order **must** match `data.yaml`, otherwise YOLO will reject labels at training time as "corrupt".
 
-### 3. Split into train / val
+### 3. Triage into train / val with `triage.py`
 
 The dataset follows the standard YOLO layout:
 
 ```
 dataset/
   images/
-    train/   # 36 images
-    val/     # 9 images
+    train/   # 144 images
+    val/     # 38 images
   labels/
-    train/   # 36 .txt files
-    val/     # 9 .txt files
+    train/   # 144 .txt files
+    val/     # 38 .txt files
 ```
 
-A small Python one-liner was used to randomly select 9 images for the validation set (since macOS doesn't ship with `shuf`):
+[`triage.py`](triage.py) is an interactive review tool. It opens each image side-by-side with predictions from pretrained `yolov8s.pt` (left) and the most recent locally-trained `best.pt` (right) so you can see how your model handles each candidate before assigning it to a split.
 
 ```bash
-cd dataset/images/train
-python3 -c "import os, random; files=[f for f in os.listdir('.') if f.lower().endswith(('.png','.jpg','.jpeg'))]; random.shuffle(files); [print(f) for f in files[:9]]" \
-  | while read -r file; do
-      base="${file%.*}"
-      mv "$file" ../val/
-      mv "../../labels/train/$base.txt" "../../labels/val/" 2>/dev/null
-    done
-cd ../../../
+source venv/bin/activate
+python triage.py
 ```
+
+Keys (one keypress per image):
+
+| Key | Source image (in `source/`) | Image already in dataset |
+| --- | --- | --- |
+| `t` | copy image + `.txt` label to `dataset/images/train/` and `dataset/labels/train/` | move image + label between splits if needed |
+| `v` | copy to `dataset/images/val/` and `dataset/labels/val/` | move between splits if needed |
+| `s` | record "skip" in `triage.csv` (no file ops) | ignored — use SPACE |
+| `space` | next image, no recording, no file ops | next image, no recording, no file ops |
+| `b` | back to previous image | back to previous image |
+| `q` | quit | quit |
+
+The originals in `source/` are **never** moved or deleted — only copied. Decisions are appended to [`triage.csv`](triage.csv) so you can quit and resume. After the source queue empties, the tool keeps going through `dataset/images/{train,val}/` so you can review or reorganize already-classified images against the latest trained model.
+
+`--trained` defaults to whichever `runs/detect/*/weights/best.pt` is most recent; pass `--trained PATH` to compare against a specific run. `--restart` wipes `triage.csv` and starts over. `--commit-only` reconciles missing labels for prior decisions (handy if you triage before labeling) and exits without opening the UI.
 
 ### 4. `data.yaml`
 
@@ -74,8 +98,8 @@ cd ../../../
 path: /private/var/www/detectfpvdrones/dataset
 train: images/train
 val: images/val
-nc: 1
-names: ["drone"]
+nc: 3
+names: ['drone', 'bird', 'person']
 ```
 
 If you clone this repo to a different location, update `path` to point at the project's `dataset/` directory.
@@ -111,8 +135,8 @@ brew install python ffmpeg
 Use the included `train.sh` (activates the venv, runs `yolo` with the tuned hyperparameters):
 
 ```bash
-./train.sh                # writes to runs/detect/train_v2
-./train.sh my_run_name    # writes to runs/detect/my_run_name
+./train.sh                # writes to runs/detect/train_v2 (default name)
+./train.sh train_v3       # writes to runs/detect/train_v3
 ```
 
 Equivalent direct command:
@@ -124,8 +148,10 @@ yolo task=detect mode=train \
   epochs=200 patience=30 \
   imgsz=640 device=mps \
   cos_lr=True lr0=0.005 \
-  name=train_v2
+  name=train_v3
 ```
+
+> Tip: if you change `data.yaml` (e.g. add a class), delete `dataset/labels/{train,val}.cache` before re-running, or YOLO will reuse the stale "corrupt label" markers from the old class count.
 
 Results, plots, and weights are written to `runs/detect/<name>/`. The best checkpoint is saved at `runs/detect/<name>/weights/best.pt`.
 
@@ -137,29 +163,22 @@ The first run (`runs/detect/train/`, yolov8n, 50 epochs, default LR) hit a high 
 - **`epochs=200 patience=30`** — long enough to converge, with early stopping so we keep the best checkpoint instead of overfitting.
 - **`cos_lr=True lr0=0.005`** — gentler, decaying schedule so the cls head stabilizes near the end of training.
 
-## Results (v1, `runs/detect/train/`)
+## Results (v3, `runs/detect/train_v3/`)
 
-Honest numbers from `results.csv`:
-
-| Epoch | Precision | Recall | mAP50 | mAP50-95 |
-| ----- | --------- | ------ | ----- | -------- |
-| 1     | 0.003     | 1.000  | 0.330 | 0.141    |
-| 5     | 0.003     | 0.875  | 0.775 | 0.482    |
-| 10    | 0.003     | 1.000  | 0.828 | 0.436    |
-| 35    | 0.860     | 0.875  | 0.971 | 0.317    |
-| 50    | 0.976     | 0.625  | 0.773 | 0.368    |
-
-GPU memory use stayed around 4.3 GB on the M3 Pro. Note the mAP50 *dropped* from 0.97 at epoch 35 to 0.77 at epoch 50 — early stopping in v2 prevents that regression.
-
-## Results (v2, `runs/detect/train_v2/`)
-
-Validation metrics on `best.pt`:
+Three-class run on 144 train / 38 val images (200 epochs, no early stop). Best epoch (192) by `mAP50-95`:
 
 | Precision | Recall | mAP50 | mAP50-95 |
 | --------- | ------ | ----- | -------- |
-| 0.85      | 0.875  | 0.812 | 0.493    |
+| 0.674     | 0.876  | 0.716 | 0.549    |
 
-Training stopped early at epoch 32 (best epoch 2 — partly an artifact of the 9-image val set). The key win over v1 isn't the headline metric, it's the **classification confidence**: top val confidences are now in the 0.5–0.84 range vs. 0.025 in v1, so `predict(conf=0.25)` actually returns boxes.
+GPU memory ~7.7 GB on the M3 Pro at `imgsz=640`.
+
+**Caveat on the headline numbers.** All 26 instances in the validation set are drones — there are zero `bird` and zero `person` instances in `val/`. Bird and person performance is therefore not reflected in `mAP`; the aggregated metrics above are effectively drone-only. Add labeled bird and person samples to `dataset/images/val/` (and run `triage.py` to move them) before trusting per-class metrics.
+
+### Earlier runs (historical)
+
+- **v1** (`runs/detect/train/`, yolov8n, 50 epochs, single-class): mAP50 peaked at 0.97 around epoch 35 then regressed to 0.77 by epoch 50. The classification head never produced confident predictions — top val confidence was ~0.025, so `predict(conf=0.25)` returned nothing.
+- **v2** (`runs/detect/train_v2/`, yolov8s, single-class, early-stopped at epoch 32): P=0.85, R=0.875, mAP50=0.812, mAP50-95=0.493. Top val confidences moved into the 0.5–0.84 range, fixing the v1 regression. v3 supersedes this once bird/person samples are in the val set.
 
 ## Image inference
 
@@ -167,7 +186,7 @@ Quick Python check (see [`test.py`](test.py)):
 
 ```python
 from ultralytics import YOLO
-model = YOLO('./runs/detect/train_v2/weights/best.pt')
+model = YOLO('./runs/detect/train_v3/weights/best.pt')
 results = model.predict(source='./dataset/images/train/image2.png', conf=0.25)
 results[0].show()
 ```
@@ -176,7 +195,7 @@ CLI equivalent:
 
 ```bash
 yolo task=detect mode=predict \
-  model=runs/detect/train_v2/weights/best.pt \
+  model=runs/detect/train_v3/weights/best.pt \
   source='path/to/image_or_video' \
   show=True
 ```
@@ -195,7 +214,7 @@ Useful flags:
 
 | Flag | Default | What it does |
 | ---- | ------- | ------------ |
-| `--weights PATH` | `runs/detect/train_v2/weights/best.pt` | Use a different checkpoint. |
+| `--weights PATH` | `runs/detect/train_v3/weights/best.pt` | Use a different checkpoint. |
 | `--conf FLOAT` | `0.25` | Confidence threshold. Try `0.10`–`0.15` on unfamiliar footage. |
 | `--imgsz INT` | `640` | Inference resolution. Bump to `1280` for small/distant drones. |
 | `--device` | `mps` | `mps`, `cpu`, or a CUDA index. |
@@ -212,12 +231,17 @@ python3 video.py clip.mp4 --conf 0.15 --track --save annotated.mp4
 
 ```
 detectfpvdrones/
-├── data.yaml              # dataset config
+├── data.yaml              # dataset config (nc=3, drone/bird/person)
+├── classes.txt            # YoloLabel class order — must match data.yaml
 ├── train.sh               # retrain entry point
+├── convert.sh             # batch sips conversion (webp/jpeg/avif → png)
+├── triage.py              # interactive train/val splitter + model comparison
+├── triage.csv             # decisions log (auto-generated, safe to delete)
 ├── test.py                # quick image-inference example
 ├── video.py               # real-time webcam / video / stream inference
 ├── requirements.txt       # python dependencies
 ├── README.md
+├── source/                # staging area for new candidate images (untracked)
 ├── dataset/               # images + labels (gitignored)
 │   ├── images/{train,val}
 │   └── labels/{train,val}
@@ -232,11 +256,13 @@ venv/
 *.pt
 runs/
 dataset/
+source/
+triage.csv
 __pycache__/
 .DS_Store
 ```
 
-Large binaries (weights, dataset images) are intentionally kept out of the repo.
+Large binaries (weights, dataset images) and the local triage state are intentionally kept out of the repo.
 
 ## Notes
 

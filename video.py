@@ -9,7 +9,7 @@ def main():
     parser = argparse.ArgumentParser(description="Real-time drone detection on a video or webcam.")
     parser.add_argument("source", nargs="?", default="0",
                         help="Path to a video file, an RTSP/HTTP URL, or a webcam index (default: 0).")
-    parser.add_argument("--weights", default="./runs/detect/train_v2/weights/best.pt",
+    parser.add_argument("--weights", default="./runs/detect/train_v3/weights/best.pt",
                         help="Path to YOLO weights.")
     parser.add_argument("--conf", type=float, default=0.25, help="Confidence threshold.")
     parser.add_argument("--imgsz", type=int, default=640, help="Inference image size.")
