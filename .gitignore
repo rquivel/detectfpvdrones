@@ -3,3 +3,6 @@ venv/
 # runs/
 __pycache__/
 .DS_Store
+testVideo4Drones.mp4
+testVideo2.mp4
+testVideo3.mp4

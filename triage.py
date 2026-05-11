@@ -11,7 +11,9 @@ Iteration order:
 
 For images coming from source: the original is left in place; the image
 and its matching .txt label are COPIED into dataset/images/<split>/ and
-dataset/labels/<split>/.
+dataset/labels/<split>/. If a stale copy of the same file exists in the
+OTHER split (e.g. from an earlier decision before --restart), it is
+automatically removed so no file ever lives in both train and val.
 
 For images already in dataset: t/v MOVE the image and label between
 splits (a file can't be in both train and val).
@@ -130,6 +132,19 @@ def commit(image_path: Path, location: str, decision: str,
         # copy from source, leave original alone
         new_img = safe_copy(image_path, img_dir)
         new_lbl = safe_copy(label_path, lbl_dir) if label_path.exists() else None
+        # If a stale copy lives in the OTHER split (from a prior decision
+        # before --restart, or from manual file moves), remove it so the
+        # same image can't appear in both train and val.
+        other = "val" if decision == "train" else "train"
+        other_img_dir, other_lbl_dir = dest_dirs(other, paths)
+        stale_img = other_img_dir / image_path.name
+        if stale_img.exists() and stale_img.resolve() != new_img.resolve():
+            stale_img.unlink()
+            print(f"removed stale {other} copy: {stale_img}")
+        stale_lbl = other_lbl_dir / (image_path.stem + ".txt")
+        if (stale_lbl.exists()
+                and (new_lbl is None or stale_lbl.resolve() != new_lbl.resolve())):
+            stale_lbl.unlink()
         # the file we still iterate from is the source one
         next_path = image_path
     elif location == decision:
@@ -407,12 +422,6 @@ def main() -> None:
         except Exception as e:
             print(f"failed to {decision} {current.name}: {e}")
             continue
-
-        if (prior and prior["decision"] in ("train", "val")
-                and decision != prior["decision"]
-                and location == "source"):
-            print(f"note: previous {prior['decision']} copy of "
-                  f"{current.name} at {prior['dest']} was NOT removed.")
 
         new_row = {"image": current.name, "decision": decision,
                    "dest": img_dest, "label_dest": lbl_dest}

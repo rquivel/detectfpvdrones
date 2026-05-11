@@ -28,57 +28,211 @@ image,decision,dest,label_dest
 17782462115775892925121221734182.jpg,val,/private/var/www/detectfpvdrones/dataset/images/val/17782462115775892925121221734182.jpg,/private/var/www/detectfpvdrones/dataset/labels/val/17782462115775892925121221734182.txt
 17782462249164892594036488660330.jpg,val,/private/var/www/detectfpvdrones/dataset/images/val/17782462249164892594036488660330.jpg,/private/var/www/detectfpvdrones/dataset/labels/val/17782462249164892594036488660330.txt
 17783534836665554066317064741535.png,train,/private/var/www/detectfpvdrones/dataset/images/train/17783534836665554066317064741535.png,/private/var/www/detectfpvdrones/dataset/labels/train/17783534836665554066317064741535.txt
-Screenshot 2026-05-10 at 0.20.50.png,val,/private/var/www/detectfpvdrones/dataset/images/val/Screenshot 2026-05-10 at 0.20.50.png,/private/var/www/detectfpvdrones/dataset/labels/val/Screenshot 2026-05-10 at 0.20.50.txt
-Screenshot 2026-05-10 at 0.21.04.png,val,/private/var/www/detectfpvdrones/dataset/images/val/Screenshot 2026-05-10 at 0.21.04.png,/private/var/www/detectfpvdrones/dataset/labels/val/Screenshot 2026-05-10 at 0.21.04.txt
-Screenshot 2026-05-10 at 0.21.28.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-10 at 0.21.28__1.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-10 at 0.21.28.txt
-Screenshot 2026-05-10 at 0.21.58.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-10 at 0.21.58__1.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-10 at 0.21.58.txt
-ai-generated-drone-flying-in-the-sky-professionalgraphy-photo.jpg,train,/private/var/www/detectfpvdrones/dataset/images/train/ai-generated-drone-flying-in-the-sky-professionalgraphy-photo__1.jpg,/private/var/www/detectfpvdrones/dataset/labels/train/ai-generated-drone-flying-in-the-sky-professionalgraphy-photo.txt
-image1.jpg,train,/private/var/www/detectfpvdrones/dataset/images/train/image1__1.jpg,/private/var/www/detectfpvdrones/dataset/labels/train/image1.txt
-image10.jpg,train,/private/var/www/detectfpvdrones/dataset/images/train/image10__2.jpg,/private/var/www/detectfpvdrones/dataset/labels/train/image10.txt
-image11.jpg,train,/private/var/www/detectfpvdrones/dataset/images/train/image11__2.jpg,/private/var/www/detectfpvdrones/dataset/labels/train/image11.txt
-image12.jpg,train,/private/var/www/detectfpvdrones/dataset/images/train/image12__2.jpg,/private/var/www/detectfpvdrones/dataset/labels/train/image12.txt
-image13.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image13__2.png,/private/var/www/detectfpvdrones/dataset/labels/train/image13.txt
-image14.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image14__2.png,/private/var/www/detectfpvdrones/dataset/labels/train/image14.txt
-image15.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image15__2.png,/private/var/www/detectfpvdrones/dataset/labels/train/image15.txt
-image16.png,val,/private/var/www/detectfpvdrones/dataset/images/val/image16__1.png,/private/var/www/detectfpvdrones/dataset/labels/val/image16.txt
-image17.png,val,/private/var/www/detectfpvdrones/dataset/images/val/image17__1.png,/private/var/www/detectfpvdrones/dataset/labels/val/image17.txt
-image18.png,val,/private/var/www/detectfpvdrones/dataset/images/val/image18__2.png,/private/var/www/detectfpvdrones/dataset/labels/val/image18.txt
-image19.png,val,/private/var/www/detectfpvdrones/dataset/images/val/image19.png,/private/var/www/detectfpvdrones/dataset/labels/val/image19.txt
-image2.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image2__2.png,/private/var/www/detectfpvdrones/dataset/labels/train/image2.txt
-image20.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image20__2.png,/private/var/www/detectfpvdrones/dataset/labels/train/image20.txt
-image21.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image21__2.png,/private/var/www/detectfpvdrones/dataset/labels/train/image21.txt
-image22.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image22__1.png,/private/var/www/detectfpvdrones/dataset/labels/train/image22.txt
-image23.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image23__2.png,/private/var/www/detectfpvdrones/dataset/labels/train/image23.txt
-image24.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image24__2.png,/private/var/www/detectfpvdrones/dataset/labels/train/image24.txt
-image25.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image25__2.png,/private/var/www/detectfpvdrones/dataset/labels/train/image25.txt
-image26.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image26__2.png,/private/var/www/detectfpvdrones/dataset/labels/train/image26.txt
-image27.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image27__2.png,/private/var/www/detectfpvdrones/dataset/labels/train/image27.txt
-image28.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image28__2.png,/private/var/www/detectfpvdrones/dataset/labels/train/image28.txt
-image29.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image29__2.png,/private/var/www/detectfpvdrones/dataset/labels/train/image29.txt
-image3.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image3__2.png,/private/var/www/detectfpvdrones/dataset/labels/train/image3.txt
-image30.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image30__2.png,/private/var/www/detectfpvdrones/dataset/labels/train/image30.txt
-image31.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image31__2.png,/private/var/www/detectfpvdrones/dataset/labels/train/image31.txt
-image32.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image32__2.png,/private/var/www/detectfpvdrones/dataset/labels/train/image32.txt
-image33.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image33__2.png,/private/var/www/detectfpvdrones/dataset/labels/train/image33.txt
-image34.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image34__2.png,/private/var/www/detectfpvdrones/dataset/labels/train/image34.txt
-image35.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image35__1.png,/private/var/www/detectfpvdrones/dataset/labels/train/image35.txt
-image36.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image36__1.png,/private/var/www/detectfpvdrones/dataset/labels/train/image36.txt
-image37.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image37__1.png,/private/var/www/detectfpvdrones/dataset/labels/train/image37.txt
-image38.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image38__1.png,/private/var/www/detectfpvdrones/dataset/labels/train/image38.txt
+Screenshot 2026-05-10 at 0.20.50.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-10 at 0.20.50.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-10 at 0.20.50.txt
+Screenshot 2026-05-10 at 0.21.04.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-10 at 0.21.04.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-10 at 0.21.04.txt
+Screenshot 2026-05-10 at 0.21.28.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-10 at 0.21.28.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-10 at 0.21.28.txt
+Screenshot 2026-05-10 at 0.21.58.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-10 at 0.21.58.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-10 at 0.21.58.txt
+ai-generated-drone-flying-in-the-sky-professionalgraphy-photo.jpg,train,/private/var/www/detectfpvdrones/dataset/images/train/ai-generated-drone-flying-in-the-sky-professionalgraphy-photo.jpg,/private/var/www/detectfpvdrones/dataset/labels/train/ai-generated-drone-flying-in-the-sky-professionalgraphy-photo.txt
+image1.jpg,train,/private/var/www/detectfpvdrones/dataset/images/train/image1.jpg,/private/var/www/detectfpvdrones/dataset/labels/train/image1.txt
+image10.jpg,train,/private/var/www/detectfpvdrones/dataset/images/train/image10.jpg,/private/var/www/detectfpvdrones/dataset/labels/train/image10.txt
+image11.jpg,train,/private/var/www/detectfpvdrones/dataset/images/train/image11.jpg,/private/var/www/detectfpvdrones/dataset/labels/train/image11.txt
+image12.jpg,train,/private/var/www/detectfpvdrones/dataset/images/train/image12.jpg,/private/var/www/detectfpvdrones/dataset/labels/train/image12.txt
+image13.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image13.png,/private/var/www/detectfpvdrones/dataset/labels/train/image13.txt
+image14.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image14.png,/private/var/www/detectfpvdrones/dataset/labels/train/image14.txt
+image15.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image15.png,/private/var/www/detectfpvdrones/dataset/labels/train/image15.txt
+image16.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image16.png,/private/var/www/detectfpvdrones/dataset/labels/train/image16.txt
+image17.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image17.png,/private/var/www/detectfpvdrones/dataset/labels/train/image17.txt
+image18.png,val,/private/var/www/detectfpvdrones/dataset/images/val/image18.png,/private/var/www/detectfpvdrones/dataset/labels/val/image18.txt
+image19.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image19.png,/private/var/www/detectfpvdrones/dataset/labels/train/image19.txt
+image2.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image2.png,/private/var/www/detectfpvdrones/dataset/labels/train/image2.txt
+image20.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image20.png,/private/var/www/detectfpvdrones/dataset/labels/train/image20.txt
+image21.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image21.png,/private/var/www/detectfpvdrones/dataset/labels/train/image21.txt
+image22.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image22.png,/private/var/www/detectfpvdrones/dataset/labels/train/image22.txt
+image23.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image23.png,/private/var/www/detectfpvdrones/dataset/labels/train/image23.txt
+image24.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image24.png,/private/var/www/detectfpvdrones/dataset/labels/train/image24.txt
+image25.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image25.png,/private/var/www/detectfpvdrones/dataset/labels/train/image25.txt
+image26.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image26.png,/private/var/www/detectfpvdrones/dataset/labels/train/image26.txt
+image27.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image27.png,/private/var/www/detectfpvdrones/dataset/labels/train/image27.txt
+image28.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image28.png,/private/var/www/detectfpvdrones/dataset/labels/train/image28.txt
+image29.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image29.png,/private/var/www/detectfpvdrones/dataset/labels/train/image29.txt
+image3.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image3.png,/private/var/www/detectfpvdrones/dataset/labels/train/image3.txt
+image30.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image30.png,/private/var/www/detectfpvdrones/dataset/labels/train/image30.txt
+image31.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image31.png,/private/var/www/detectfpvdrones/dataset/labels/train/image31.txt
+image32.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image32.png,/private/var/www/detectfpvdrones/dataset/labels/train/image32.txt
+image33.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image33.png,/private/var/www/detectfpvdrones/dataset/labels/train/image33.txt
+image34.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image34.png,/private/var/www/detectfpvdrones/dataset/labels/train/image34.txt
+image35.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image35.png,/private/var/www/detectfpvdrones/dataset/labels/train/image35.txt
+image36.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image36.png,/private/var/www/detectfpvdrones/dataset/labels/train/image36.txt
+image37.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image37.png,/private/var/www/detectfpvdrones/dataset/labels/train/image37.txt
+image38.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image38.png,/private/var/www/detectfpvdrones/dataset/labels/train/image38.txt
 image39.png,val,/private/var/www/detectfpvdrones/dataset/images/val/image39.png,/private/var/www/detectfpvdrones/dataset/labels/val/image39.txt
 image4.png,val,/private/var/www/detectfpvdrones/dataset/images/val/image4.png,/private/var/www/detectfpvdrones/dataset/labels/val/image4.txt
-image40.png,val,/private/var/www/detectfpvdrones/dataset/images/val/image40.png,/private/var/www/detectfpvdrones/dataset/labels/val/image40.txt
+image40.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image40.png,/private/var/www/detectfpvdrones/dataset/labels/train/image40.txt
 image41.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image41.png,/private/var/www/detectfpvdrones/dataset/labels/train/image41.txt
-image42.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image42__1.png,/private/var/www/detectfpvdrones/dataset/labels/train/image42.txt
-image43.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image43__1.png,/private/var/www/detectfpvdrones/dataset/labels/train/image43.txt
-image44.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image44__1.png,/private/var/www/detectfpvdrones/dataset/labels/train/image44.txt
-image45.png,val,/private/var/www/detectfpvdrones/dataset/images/val/image45__1.png,/private/var/www/detectfpvdrones/dataset/labels/val/image45.txt
-image5.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image5__2.png,/private/var/www/detectfpvdrones/dataset/labels/train/image5.txt
+image42.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image42.png,/private/var/www/detectfpvdrones/dataset/labels/train/image42.txt
+image43.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image43.png,/private/var/www/detectfpvdrones/dataset/labels/train/image43.txt
+image44.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image44.png,/private/var/www/detectfpvdrones/dataset/labels/train/image44.txt
+image45.png,val,/private/var/www/detectfpvdrones/dataset/images/val/image45.png,/private/var/www/detectfpvdrones/dataset/labels/val/image45.txt
+image5.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image5.png,/private/var/www/detectfpvdrones/dataset/labels/train/image5.txt
 image6.png,val,/private/var/www/detectfpvdrones/dataset/images/val/image6.png,/private/var/www/detectfpvdrones/dataset/labels/val/image6.txt
-image7.png,val,/private/var/www/detectfpvdrones/dataset/images/val/image7__1.png,/private/var/www/detectfpvdrones/dataset/labels/val/image7.txt
+image7.png,val,/private/var/www/detectfpvdrones/dataset/images/val/image7.png,/private/var/www/detectfpvdrones/dataset/labels/val/image7.txt
 image8.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image8.png,/private/var/www/detectfpvdrones/dataset/labels/train/image8.txt
-image9.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image9__2.png,/private/var/www/detectfpvdrones/dataset/labels/train/image9.txt
-images (1).png,train,/private/var/www/detectfpvdrones/dataset/images/train/images (1)__1.png,/private/var/www/detectfpvdrones/dataset/labels/train/images (1).txt
-images (2).jpeg,train,/private/var/www/detectfpvdrones/dataset/images/train/images (2)__1.jpeg,
-images.png,train,/private/var/www/detectfpvdrones/dataset/images/train/images__1.png,/private/var/www/detectfpvdrones/dataset/labels/train/images.txt
-premium_photo-1675778644413-53825034abd1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/premium_photo-1675778644413-53825034abd1__1.png,/private/var/www/detectfpvdrones/dataset/labels/train/premium_photo-1675778644413-53825034abd1.txt
+image9.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image9.png,/private/var/www/detectfpvdrones/dataset/labels/train/image9.txt
+images (1).png,train,/private/var/www/detectfpvdrones/dataset/images/train/images (1).png,/private/var/www/detectfpvdrones/dataset/labels/train/images (1).txt
+images (2).jpeg,train,/private/var/www/detectfpvdrones/dataset/images/train/images (2).jpeg,
+images.png,train,/private/var/www/detectfpvdrones/dataset/images/train/images.png,/private/var/www/detectfpvdrones/dataset/labels/train/images.txt
+premium_photo-1675778644413-53825034abd1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/premium_photo-1675778644413-53825034abd1.png,/private/var/www/detectfpvdrones/dataset/labels/train/premium_photo-1675778644413-53825034abd1.txt
+Screenshot 2026-05-11 at 10.58.11.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 10.58.11.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 10.58.11.txt
+Screenshot 2026-05-11 at 10.58.25.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 10.58.25.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 10.58.25.txt
+Screenshot 2026-05-11 at 10.59.04.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 10.59.04.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 10.59.04.txt
+Screenshot 2026-05-11 at 10.59.11.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 10.59.11.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 10.59.11.txt
+Screenshot 2026-05-11 at 10.59.29.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 10.59.29.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 10.59.29.txt
+Screenshot 2026-05-11 at 11.00.40.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.00.40.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.00.40.txt
+Screenshot 2026-05-11 at 11.01.44.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.01.44.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.01.44.txt
+Screenshot 2026-05-11 at 11.02.04.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.02.04.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.02.04.txt
+Screenshot 2026-05-11 at 11.02.24.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.02.24.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.02.24.txt
+Screenshot 2026-05-11 at 11.02.40.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.02.40.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.02.40.txt
+Screenshot 2026-05-11 at 11.02.57.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.02.57.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.02.57.txt
+Screenshot 2026-05-11 at 11.03.31.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.03.31.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.03.31.txt
+Screenshot 2026-05-11 at 11.04.31.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.04.31.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.04.31.txt
+Screenshot 2026-05-11 at 11.04.53.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.04.53.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.04.53.txt
+Screenshot 2026-05-11 at 11.05.18.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.05.18.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.05.18.txt
+Screenshot 2026-05-11 at 11.07.08.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.07.08.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.07.08.txt
+Screenshot 2026-05-11 at 11.07.30.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.07.30.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.07.30.txt
+Screenshot 2026-05-11 at 11.07.46.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.07.46.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.07.46.txt
+Screenshot 2026-05-11 at 11.08.06.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.08.06.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.08.06.txt
+Screenshot 2026-05-11 at 11.08.20.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.08.20.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.08.20.txt
+Screenshot 2026-05-11 at 11.08.32.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.08.32.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.08.32.txt
+Screenshot 2026-05-11 at 11.08.50.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.08.50.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.08.50.txt
+Screenshot 2026-05-11 at 11.09.08.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.09.08.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.09.08.txt
+Screenshot 2026-05-11 at 11.09.30.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.09.30.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.09.30.txt
+Screenshot 2026-05-11 at 11.14.07.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.14.07.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.14.07.txt
+Screenshot 2026-05-11 at 11.14.26.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.14.26.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.14.26.txt
+Screenshot 2026-05-11 at 11.14.53.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.14.53.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.14.53.txt
+Screenshot 2026-05-11 at 11.15.07.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.15.07.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.15.07.txt
+Screenshot 2026-05-11 at 11.15.22.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.15.22.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.15.22.txt
+Screenshot 2026-05-11 at 11.15.38.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.15.38.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.15.38.txt
+Screenshot 2026-05-11 at 11.15.56.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.15.56.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.15.56.txt
+Screenshot 2026-05-11 at 11.16.14.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.16.14.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.16.14.txt
+Screenshot 2026-05-11 at 11.16.33.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.16.33.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.16.33.txt
+Screenshot 2026-05-11 at 11.16.49.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.16.49.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.16.49.txt
+Screenshot 2026-05-11 at 11.17.02.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.17.02.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.17.02.txt
+Screenshot 2026-05-11 at 11.17.16.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.17.16.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.17.16.txt
+Screenshot 2026-05-11 at 11.17.35.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.17.35.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.17.35.txt
+Screenshot 2026-05-11 at 11.17.48.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.17.48.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.17.48.txt
+Screenshot 2026-05-11 at 11.18.08.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.18.08.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.18.08.txt
+Screenshot 2026-05-11 at 11.18.59.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.18.59.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.18.59.txt
+Screenshot 2026-05-11 at 11.19.36.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.19.36.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.19.36.txt
+Screenshot 2026-05-11 at 11.20.01.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.20.01.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.20.01.txt
+Screenshot 2026-05-11 at 11.20.17.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.20.17.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.20.17.txt
+Screenshot 2026-05-11 at 11.20.46.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.20.46.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.20.46.txt
+Screenshot 2026-05-11 at 11.21.15.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.21.15.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.21.15.txt
+Screenshot 2026-05-11 at 11.21.53.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.21.53.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.21.53.txt
+Screenshot 2026-05-11 at 11.22.20.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.22.20.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.22.20.txt
+Screenshot 2026-05-11 at 11.22.58.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.22.58.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.22.58.txt
+Screenshot 2026-05-11 at 11.23.16.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.23.16.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.23.16.txt
+Screenshot 2026-05-11 at 11.23.31.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.23.31.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.23.31.txt
+Screenshot 2026-05-11 at 11.23.49.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.23.49.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.23.49.txt
+Screenshot 2026-05-11 at 11.24.14.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.24.14.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.24.14.txt
+Screenshot 2026-05-11 at 11.24.37.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.24.37.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.24.37.txt
+Screenshot 2026-05-11 at 11.26.02.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.26.02.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.26.02.txt
+Screenshot 2026-05-11 at 11.26.16.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.26.16.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.26.16.txt
+Screenshot 2026-05-11 at 11.26.28.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.26.28.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.26.28.txt
+Screenshot 2026-05-11 at 11.26.40.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.26.40.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.26.40.txt
+Screenshot 2026-05-11 at 11.26.50.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.26.50.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.26.50.txt
+Screenshot 2026-05-11 at 11.27.01.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.27.01.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.27.01.txt
+Screenshot 2026-05-11 at 11.27.14.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.27.14.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.27.14.txt
+Screenshot 2026-05-11 at 11.27.25.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.27.25.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.27.25.txt
+Screenshot 2026-05-11 at 11.27.36.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.27.36.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.27.36.txt
+Screenshot 2026-05-11 at 11.27.46.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 11.27.46.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 11.27.46.txt
+Screenshot 2026-05-10 at 0.21.28__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-10 at 0.21.28__1.png,
+Screenshot 2026-05-10 at 0.21.58__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-10 at 0.21.58__1.png,
+image10__1.jpg,train,/private/var/www/detectfpvdrones/dataset/images/train/image10__1.jpg,
+image10__2.jpg,train,/private/var/www/detectfpvdrones/dataset/images/train/image10__2.jpg,
+image12__1.jpg,train,/private/var/www/detectfpvdrones/dataset/images/train/image12__1.jpg,
+image12__2.jpg,train,/private/var/www/detectfpvdrones/dataset/images/train/image12__2.jpg,
+image13__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image13__1.png,
+image13__2.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image13__2.png,
+image14__2.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image14__2.png,
+image15__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image15__1.png,
+image15__2.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image15__2.png,
+image19__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image19__1.png,
+image1__1.jpg,train,/private/var/www/detectfpvdrones/dataset/images/train/image1__1.jpg,
+image20__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image20__1.png,
+image20__2.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image20__2.png,
+image21__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image21__1.png,
+image21__2.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image21__2.png,
+image22__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image22__1.png,
+image23__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image23__1.png,
+image23__2.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image23__2.png,
+image24__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image24__1.png,
+image24__2.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image24__2.png,
+image25__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image25__1.png,
+image25__2.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image25__2.png,
+image26__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image26__1.png,
+image26__2.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image26__2.png,
+image27__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image27__1.png,
+image27__2.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image27__2.png,
+image28__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image28__1.png,
+image28__2.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image28__2.png,
+image29__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image29__1.png,
+image29__2.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image29__2.png,
+image2__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image2__1.png,
+image2__2.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image2__2.png,
+image30__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image30__1.png,
+image30__2.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image30__2.png,
+image31__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image31__1.png,
+image31__2.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image31__2.png,
+image32__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image32__1.png,
+image32__2.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image32__2.png,
+image33__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image33__1.png,
+image33__2.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image33__2.png,
+image34__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image34__1.png,
+image34__2.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image34__2.png,
+image35__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image35__1.png,
+image36__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image36__1.png,
+image37__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image37__1.png,
+image38__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image38__1.png,
+image39__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image39__1.png,
+image3__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image3__1.png,
+image3__2.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image3__2.png,
+image40__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image40__1.png,
+image42__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image42__1.png,
+image43__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image43__1.png,
+image44__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image44__1.png,
+image4__1.png,val,/private/var/www/detectfpvdrones/dataset/images/val/image4__1.png,
+image5__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image5__1.png,
+image5__2.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image5__2.png,
+image6__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image6__1.png,
+images (1)__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/images (1)__1.png,
+images (2)__1.jpeg,train,/private/var/www/detectfpvdrones/dataset/images/train/images (2)__1.jpeg,
+images__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/images__1.png,
+premium_photo-1675778644413-53825034abd1__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/premium_photo-1675778644413-53825034abd1__1.png,
+image16__1.png,val,/private/var/www/detectfpvdrones/dataset/images/val/image16__1.png,
+image17__1.png,val,/private/var/www/detectfpvdrones/dataset/images/val/image17__1.png,
+image18__1.png,val,/private/var/www/detectfpvdrones/dataset/images/val/image18__1.png,
+image18__2.png,val,/private/var/www/detectfpvdrones/dataset/images/val/image18__2.png,
+image41__1.png,val,/private/var/www/detectfpvdrones/dataset/images/val/image41__1.png,
+image45__1.png,val,/private/var/www/detectfpvdrones/dataset/images/val/image45__1.png,
+image7__1.png,val,/private/var/www/detectfpvdrones/dataset/images/val/image7__1.png,
+image8__1.png,val,/private/var/www/detectfpvdrones/dataset/images/val/image8__1.png,
+Screenshot 2026-05-11 at 22.20.03.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 22.20.03.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 22.20.03.txt
+Screenshot 2026-05-11 at 22.20.51.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 22.20.51.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 22.20.51.txt
+Screenshot 2026-05-11 at 22.21.15.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 22.21.15.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 22.21.15.txt
+Screenshot 2026-05-11 at 22.24.00.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 22.24.00.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 22.24.00.txt
+Screenshot 2026-05-11 at 22.24.43.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 22.24.43.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 22.24.43.txt
+Screenshot 2026-05-11 at 22.25.00.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 22.25.00.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 22.25.00.txt
+Screenshot 2026-05-11 at 22.26.45.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 22.26.45.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 22.26.45.txt
+Screenshot 2026-05-11 at 22.32.04.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 22.32.04.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 22.32.04.txt
+Screenshot 2026-05-11 at 22.32.35.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 22.32.35.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 22.32.35.txt
+Screenshot 2026-05-11 at 22.32.57.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 22.32.57.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 22.32.57.txt
+Screenshot 2026-05-11 at 22.38.42.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 22.38.42.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 22.38.42.txt
+Screenshot 2026-05-11 at 22.38.57.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 22.38.57.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 22.38.57.txt
+Screenshot 2026-05-11 at 22.39.09.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 22.39.09.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 22.39.09.txt
+Screenshot 2026-05-11 at 22.39.51.png,train,/private/var/www/detectfpvdrones/dataset/images/train/Screenshot 2026-05-11 at 22.39.51.png,/private/var/www/detectfpvdrones/dataset/labels/train/Screenshot 2026-05-11 at 22.39.51.txt
+ai-generated-drone-flying-in-the-sky-professionalgraphy-photo__1.jpg,train,/private/var/www/detectfpvdrones/dataset/images/train/ai-generated-drone-flying-in-the-sky-professionalgraphy-photo__1.jpg,
+image11__1.jpg,train,/private/var/www/detectfpvdrones/dataset/images/train/image11__1.jpg,
+image11__2.jpg,train,/private/var/www/detectfpvdrones/dataset/images/train/image11__2.jpg,
+image14__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image14__1.png,
+image9__1.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image9__1.png,
+image9__2.png,train,/private/var/www/detectfpvdrones/dataset/images/train/image9__2.png,
